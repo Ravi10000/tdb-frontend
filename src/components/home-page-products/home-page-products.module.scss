@@ -1,0 +1,34 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  .product {
+    .contentText {
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .contentImage {
+      font-weight: 500;
+      cursor: pointer;
+      height: 4rem;
+      width: fit-content;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .products {
+    width: 100%;
+    .product {
+      width: 100%;
+      max-width: 1700px;
+      object-fit: cover;
+      .contentText {
+        color: #fff;
+      }
+      .contentImage {
+        filter: invert(1);
+      }
+    }
+  }
+}

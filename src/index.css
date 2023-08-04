@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "BaronSans";
+  src: url("./assets/fonts/barson/BaronSans-Thin.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "BaronSans";
+  src: url("./assets/fonts/barson/BaronSans-Light.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "BaronSans";
+  src: url("./assets/fonts/barson/BaronSans-Medium.otf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "BaronSans";
+  src: url("./assets/fonts/barson/BaronSans-Bold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "CaslonThin";
+  src: url("./assets/fonts/caslon/CaslonRH-Thin.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "CaslonThin";
+  src: url("./assets/fonts/caslon/CaslonRH-Superfine.otf");
+  font-weight: 300;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --lightColor: #fff;
+  --backgroundColor: #f9f7f4;
+  --darkColor: #0d0d0d;
+  --headingFont: "CaslonThin", "sans-serif";
+  --normalFont: "BaronSans", "cursive";
+  --maxWorkAreaWidth: 1700px;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--lightColor);
+  color: var(--darkColor);
+  font-family: "BaronSans", "cursive";
+}
+h1 {
+  font-family: "CaslonThin", "sans-serif";
+}

@@ -1,0 +1,76 @@
+.sidebarContainer {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  animation: slideInFromLeft 0.5s ease-in-out;
+  height: 100vh;
+  transition: all 0.5s ease-in-out;
+  &.closing {
+    left: -100%;
+    &::before {
+      animation: none;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    background: #00000036;
+    animation: scaleFromCenter 0.5s ease-in-out forwards;
+  }
+  .sidebar {
+    width: fit-content;
+    height: 100%;
+    padding: 2rem 10rem 2rem 2rem;
+    position: relative;
+    background: var(--backgroundColor);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-weight: 300;
+    li {
+      cursor: pointer;
+      width: fit-content;
+    }
+    .close {
+      cursor: pointer;
+      position: absolute;
+      right: -5rem;
+      height: 2rem;
+      top: 10px;
+      width: fit-content;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutToLeft {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scaleFromCenter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
