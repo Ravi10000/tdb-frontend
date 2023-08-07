@@ -26,12 +26,14 @@ function HomePageProducts() {
       <Gallery />
       <div className={styles.product}>
         <VideoPlayer src={heroVideo}>
-          <h1 className={styles.contentText}>RAZOR BAR at</h1>
-          <img
-            src={logoLarge}
-            alt="the district barbers"
-            className={styles.contentImage}
-          />
+          <div className={styles.content}>
+            <h1 className={styles.contentText}>RAZOR BAR at</h1>
+            <img
+              src={logoLarge}
+              alt="the district barbers"
+              className={styles.contentImage}
+            />
+          </div>
         </VideoPlayer>
       </div>
     </div>

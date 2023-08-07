@@ -24,12 +24,142 @@
     font-weight: 400;
     font-family: var(--normalFont);
   }
+  .shopAt {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .shopHead {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      h2 {
+        font-weight: 500;
+        font-size: 3rem;
+        font-family: var(--headingFont);
+      }
+      img {
+        height: 3rem;
+        width: fit-content;
+      }
+    }
+    .shopItemContainer {
+      max-width: var(--maxWorkAreaWidth);
+      width: 100%;
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          height: 4rem;
+          width: fit-content;
+        }
+        p {
+          letter-spacing: 2px;
+          font-weight: 300;
+          font-size: 2rem;
+        }
+      }
+    }
+    .subSection {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      .card {
+        height: 200px;
+        background: url("/home-hero.jpg");
+        background-size: cover;
+        color: #fff;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 20px;
+        .cardContent {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .logo {
+            height: 3rem;
+            width: fit-content;
+            filter: invert(1);
+          }
+          p {
+            letter-spacing: 2px;
+            font-size: 2rem;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  .afterShop {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+    max-width: var(--maxWorkAreaWidth);
+    h2 {
+      font-family: var(--headingFont);
+      font-size: 3rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .afterShopContent {
+      position: relative;
+      .coverImage {
+        width: 100%;
+        height: fit-content;
+      }
+      .logo {
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        filter: invert(1);
+        position: absolute;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .homePage {
+    .shopAt {
+      .shopItemContainer {
+        .content {
+          img {
+            filter: invert(1);
+          }
+          p {
+            font-size: 3rem;
+            color: #fff;
+          }
+        }
+      }
+      .subSection {
+        .card {
+          height: 50vh;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 1024px) {
   .homePage {
     .heroSection {
       height: 85vh;
+    }
+    .shopAt {
+      .subSection {
+        max-width: var(--maxWorkAreaWidth);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
     }
   }
 }

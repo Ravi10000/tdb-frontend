@@ -1,7 +1,7 @@
 import styles from "./header.module.scss";
 import logo from "#assets/images/logos/tdb-logo.png";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // icons
 import { AiOutlineMenu } from "react-icons/ai";
@@ -15,12 +15,16 @@ import { BsBag } from "react-icons/bs";
 // components
 import Sidebar from "#components/sidebar/sidebar";
 import Navbar from "#components/navbar/navbar";
+import { useLocation } from "react-router-dom";
 
 function Header() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isHome && styles.home}`}>
       <header className={styles.header}>
         {isSidebarOpen && <Sidebar close={() => setIsSidebarOpen(false)} />}
         <div className={`${styles.subMenu} ${styles.leftMenu}`}>
@@ -43,7 +47,7 @@ function Header() {
           <BsBag className={styles.icon} />
         </div>
       </header>
-      <Navbar />
+      {isHome && <Navbar />}
     </div>
   );
 }

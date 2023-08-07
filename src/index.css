@@ -46,7 +46,7 @@
 
 body {
   min-height: 100vh;
-  background: var(--lightColor);
+  background: var(--backgroundColor);
   color: var(--darkColor);
   font-family: "BaronSans", "cursive";
 }

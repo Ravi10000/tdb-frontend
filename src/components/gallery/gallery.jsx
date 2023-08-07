@@ -16,7 +16,7 @@ function Gallery() {
       <div className={styles.container}>
         <div className={styles.services}>
           {servicesInfo.map((service) => (
-            <ServiceCard service={service} />
+            <ServiceCard service={service} key={service.title} />
           ))}
         </div>
       </div>

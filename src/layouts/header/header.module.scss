@@ -26,7 +26,27 @@
 @media (min-width: 1024px) {
   .container {
     position: relative;
-    color: #fff;
+    &.home {
+      color: #fff;
+      .header {
+        padding: 1rem 2rem;
+        background: transparent;
+        .logo {
+          filter: invert(1);
+        }
+      }
+      &:hover {
+        color: var(--darlColor);
+        .header {
+          .logo {
+            filter: invert(0);
+          }
+        }
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
     &:before {
       content: "";
       left: 0;
@@ -39,23 +59,13 @@
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
     }
-    &:hover {
-      color: var(--darlColor);
-      .header {
-        .logo {
-          filter: invert(0);
-        }
-      }
-      &:before {
-        opacity: 1;
-      }
-    }
+
     .header {
       padding: 1rem 2rem;
-      background: transparent;
-      .logo {
-        filter: invert(1);
-      }
+      // background: transparent;
+      // .logo {
+      //   filter: invert(1);
+      // }
     }
   }
 }
