@@ -29,16 +29,17 @@
     animation: scaleFromCenter 0.5s ease-in-out forwards;
   }
   .sidebar {
-    width: fit-content;
+    width: 70%;
+    max-width: 300px;
     height: 100%;
-    padding: 2rem 10rem 2rem 2rem;
+    padding: 5rem 2rem;
     position: relative;
     background: var(--backgroundColor);
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    font-weight: 300;
+    // font-weight: 300;
     li {
       cursor: pointer;
       width: fit-content;

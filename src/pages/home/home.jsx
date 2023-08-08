@@ -15,7 +15,7 @@ function HomePage() {
     <div className={styles.homePage}>
       <section className={styles.heroSection}>
         <div className={styles.heroVideo}>
-          <VideoPlayer src={promoVideo} />
+          <VideoPlayer src={heroVideo} />
         </div>
       </section>
       <h1
