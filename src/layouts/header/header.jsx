@@ -16,17 +16,20 @@ import { BsBag } from "react-icons/bs";
 import Sidebar from "#components/sidebar/sidebar";
 import Navbar from "#components/navbar/navbar";
 import { useLocation } from "react-router-dom";
+import SearchSidebar from "#components/search-sidebar/search-sidebar";
 
 function Header() {
   const { pathname } = useLocation();
   const isHome = pathname === "/";
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
     <div className={`${styles.container} ${isHome && styles.home}`}>
       <header className={styles.header}>
         {isSidebarOpen && <Sidebar close={() => setIsSidebarOpen(false)} />}
+        {isSearchOpen && <SearchSidebar close={() => setIsSearchOpen(false)} />}
         <div className={`${styles.subMenu} ${styles.leftMenu}`}>
           <AiOutlineMenu
             className={styles.icon}
@@ -34,7 +37,10 @@ function Header() {
               setIsSidebarOpen(true);
             }}
           />
-          <RiSearchLine className={styles.icon} />
+          <RiSearchLine
+            className={styles.icon}
+            onClick={() => setIsSearchOpen(true)}
+          />
         </div>
         <img
           className={styles.logo}

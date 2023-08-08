@@ -1,0 +1,57 @@
+.barberSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      .backIcon {
+        color: #b4b4b497;
+        height: 1.5rem;
+        width: fit-content;
+      }
+    }
+    .heading {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 1.2rem;
+    }
+    .closeBtn {
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ebebeb;
+      border-radius: 50px;
+      cursor: pointer;
+      .closeIcon {
+        height: 1rem;
+        width: fit-content;
+        color: #0d0d0d97;
+      }
+    }
+  }
+  .barbersList {
+    padding: 5px;
+    flex-grow: 1;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    // hide scrollbars
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

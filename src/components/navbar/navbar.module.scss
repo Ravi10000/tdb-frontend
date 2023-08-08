@@ -6,10 +6,11 @@
   .navbar {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background: transparent;
     padding: 1rem 2rem;
-    li {
+    a {
+      text-decoration: none;
       font-weight: 300;
       cursor: pointer;
     }

@@ -1,0 +1,16 @@
+.bookNowButton {
+  background: #0d0d0d97;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 1.5rem 2.5rem;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  // font-family: var(--normalFont);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  z-index: 100;
+  cursor: pointer;
+}

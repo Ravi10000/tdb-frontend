@@ -5,13 +5,17 @@ import logoLarge from "#assets/images/logos/tdb-logo-lg.png";
 import heroVideo from "#assets/videos/home-hero-video.mp4";
 import VideoPlayer from "#components/video-player/video-player";
 import Gallery from "#components/gallery/gallery";
+import { useBookNow } from "src/context/book-now.context";
 
 function HomePageProducts() {
+  const { openBookNow } = useBookNow();
   return (
     <div className={styles.products}>
       <div className={styles.product}>
         <VideoPlayer src={heroVideo}>
-          <h1 className={styles.contentText}>BOOK AN APPOINTMENT</h1>
+          <h1 className={styles.contentText} onClick={openBookNow}>
+            BOOK AN APPOINTMENT
+          </h1>
         </VideoPlayer>
       </div>
       <div className={styles.product}>

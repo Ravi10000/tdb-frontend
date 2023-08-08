@@ -5,7 +5,7 @@ import ServiceCard from "#components/service-card/service-card";
 
 function Gallery() {
   return (
-    <div className={styles.gallery}>
+    <div className={styles.gallery} id="gallery">
       <div className={styles.head}>
         <h1 className={styles.title}>GALLERY</h1>
         <img src={logoLarge} alt="the district barbers" />

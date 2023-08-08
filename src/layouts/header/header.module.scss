@@ -37,6 +37,9 @@
       }
       &:hover {
         color: var(--darlColor);
+        a {
+          color: var(--darlColor);
+        }
         .header {
           .logo {
             filter: invert(0);
@@ -59,7 +62,9 @@
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
     }
-
+    a {
+      color: #fff;
+    }
     .header {
       padding: 1rem 2rem;
       // background: transparent;

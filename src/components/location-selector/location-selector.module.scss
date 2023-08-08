@@ -1,0 +1,131 @@
+.locationSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .heading {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 1.2rem;
+    }
+    .closeBtn {
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ebebeb;
+      border-radius: 50px;
+      cursor: pointer;
+      .closeIcon {
+        height: 1rem;
+        width: fit-content;
+        color: #0d0d0d97;
+      }
+    }
+  }
+  .subHead {
+    display: flex;
+    gap: 1rem;
+    .action {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 50px;
+      border: 1px solid #b4b4b497;
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+      //   background: #fff;
+      background: var(--backgroundColor);
+      transition: all 0.2s ease-in;
+      &:hover {
+        // border-color: transparent;
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
+      }
+      &.active {
+        // color: #fff;
+        color: var(--backgroundColor);
+        background: var(--darkColor);
+      }
+
+      p {
+        font-size: 0.8rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+  .searchBox {
+    border: 1px solid var(--darkColor);
+    border-radius: 1rem;
+    animation: slideInFromTop 0.3s ease-in-out;
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: text;
+    .searchIcon {
+      height: 1rem;
+      width: fit-content;
+    }
+    input {
+      font-size: 1rem;
+      border: none;
+      flex-grow: 1;
+      background: transparent;
+      &::placeholder {
+        font-family: "Montserrat", sans-serif;
+      }
+      &:focus {
+        outline: transparent;
+      }
+    }
+  }
+  .locations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    // height: 100%;
+    // max-height: 600px;
+    flex-grow: 1;
+    overflow-y: auto;
+    // hide scrollbars
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOutToRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}

@@ -5,19 +5,22 @@ import HomePageProducts from "#components/home-page-products/home-page-products"
 import logo from "#assets/images/logos/tdb-logo.png";
 import logoLarge from "#assets/images/logos/tdb-logo-lg.png";
 import { useNavigate } from "react-router-dom";
+import { useBookNow } from "src/context/book-now.context";
+import promoVideo from "#assets/videos/promo.mp4";
 
 function HomePage() {
   const navigate = useNavigate();
+  const { openBookNow } = useBookNow();
   return (
     <div className={styles.homePage}>
       <section className={styles.heroSection}>
         <div className={styles.heroVideo}>
-          <VideoPlayer src={heroVideo} />
+          <VideoPlayer src={promoVideo} />
         </div>
       </section>
       <h1
         className={`__highlightOnHover ${styles.bookLink}`}
-        onClick={() => navigate("/contact-us")}
+        onClick={openBookNow}
       >
         BOOK AN APPOINTMENT
       </h1>

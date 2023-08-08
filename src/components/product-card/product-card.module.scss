@@ -1,0 +1,35 @@
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .imageContainer {
+    background: #f1f1f1;
+    padding: 30px;
+    img {
+      height: 250px;
+      width: 250px;
+      object-fit: contain;
+    }
+  }
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h3 {
+      text-transform: capitalize;
+      font-family: var(--headingFont);
+      font-weight: 500;
+    }
+    div {
+      display: flex;
+      gap: 25px;
+      color: gray;
+      &.member {
+        color: var(--darkColor);
+      }
+    }
+    .finalPrice {
+      color: rgb(217, 55, 55);
+    }
+  }
+}

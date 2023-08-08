@@ -9,6 +9,7 @@
       "#assets/*": ["./src/assets/*"],
       "#redux/*": ["./src/redux/*"],
       "#api/*": ["./src/api/*"],
+      "#data/*": ["./src/data/*"],
       "#hooks/*": ["./src/hooks/*"],
       "#utils/*": ["./src/utils/*"]
     }

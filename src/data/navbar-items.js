@@ -1,22 +1,22 @@
 export const navbarItems = [
   {
-    name: "Book Now",
+    name: "BOOK NOW",
+    // path: "/contact-us",
+  },
+  {
+    name: "JOIN OUR TEAM",
     path: "/contact-us",
   },
   {
-    name: "Join Our Team",
+    name: "LOCATIONS",
     path: "/contact-us",
   },
   {
-    name: "Locations",
-    path: "/contact-us",
+    name: "SHOP",
+    path: "/shop",
   },
   {
-    name: "Shop",
-    path: "/contact-us",
-  },
-  {
-    name: "Gallery",
-    path: "/contact-us",
+    name: "GALLERY",
+    path: "/#gallery",
   },
 ];

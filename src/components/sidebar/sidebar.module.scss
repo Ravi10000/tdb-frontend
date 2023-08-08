@@ -7,6 +7,9 @@
   animation: slideInFromLeft 0.5s ease-in-out;
   height: 100vh;
   transition: all 0.5s ease-in-out;
+  a {
+    color: var(--darkColor);
+  }
   &.closing {
     left: -100%;
     &::before {
@@ -44,10 +47,12 @@
       cursor: pointer;
       position: absolute;
       right: -5rem;
-      height: 2rem;
-      top: 10px;
+      height: 1.5rem;
+      top: 20px;
       width: fit-content;
-      color: #fff;
+      // color: #fff;
+      color: #3d3d3d;
+      animation: scaleUp 1s ease-in-out forwards;
     }
   }
 }
@@ -68,6 +73,17 @@
 @keyframes scaleFromCenter {
   0% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0);
   }
   100% {
     opacity: 1;
