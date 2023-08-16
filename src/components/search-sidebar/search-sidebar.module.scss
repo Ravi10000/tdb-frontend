@@ -34,7 +34,7 @@
     min-width: 200px;
     max-width: 1000px;
     height: 100%;
-    padding: 4rem 2rem;
+    padding: 3rem 1rem;
     background: var(--backgroundColor);
     list-style: none;
     display: flex;
@@ -44,6 +44,25 @@
     font-weight: 300;
     position: relative;
     z-index: 10000000;
+    // hide scrollbars
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .buttonContainer {
+      width: 100%;
+      max-width: 700px;
+      .searchButton {
+        font-size: 0.7rem;
+        padding: 1rem 2rem;
+        background: var(--backgroundColor);
+        border: 1px solid #d2d0ce;
+        color: #696867;
+        cursor: pointer;
+        align-self: flex-start;
+      }
+    }
   }
   .close {
     cursor: pointer;

@@ -6,7 +6,11 @@ import { LuSearch } from "react-icons/lu";
 import LocationCard from "#components/location-card/location-card";
 import { locationsInfo } from "#data/location-info";
 
-function LocationSelector({ closeBookNow, setSelectedLocation }) {
+function LocationSelector({
+  closeBookNow,
+  setSelectedLocation,
+  accessLocation,
+}) {
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
   const [isNeabySelected, setIsNearbySelected] = useState(false);
   return (
@@ -21,6 +25,7 @@ function LocationSelector({ closeBookNow, setSelectedLocation }) {
         <div
           className={`${styles.action} ${isNeabySelected && styles.active}`}
           onClick={() => {
+            if (!isNeabySelected) accessLocation();
             setIsNearbySelected((prevState) => !prevState);
             setIsSearchBarOpen(false);
           }}

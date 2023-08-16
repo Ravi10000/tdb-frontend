@@ -1,0 +1,19 @@
+.verifyOTPPage {
+  .container {
+    padding: 50px 20px;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    p {
+      color: #72787f;
+      max-width: 400px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+}

@@ -12,7 +12,7 @@ export default defineConfig({
       "#layouts": "/src/layouts",
       "#assets": "/src/assets",
       "#context": "/src/context",
-      "#apis": "/src/apis",
+      "#api": "/src/api",
       "#data": "/src/data",
       "#hooks": "/src/hooks",
       "#utilities": "/src/utilities",

@@ -1,5 +1,8 @@
 import styles from "./header.module.scss";
-import logo from "#assets/images/logos/tdb-logo.png";
+// import logo from "#assets/images/logos/tdb-logo.png";
+import logoLg from "#assets/images/logos/tdb-logo-lg.png";
+// import logoBlack from "#assets/images/logos/LOGO-black.png";
+// import logoWhite from "#assets/images/logos/LOGO-white.png";
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,16 +20,21 @@ import Sidebar from "#components/sidebar/sidebar";
 import Navbar from "#components/navbar/navbar";
 import { useLocation } from "react-router-dom";
 import SearchSidebar from "#components/search-sidebar/search-sidebar";
+import { connect } from "react-redux";
 
-function Header() {
+function Header({ currentUser }) {
+  // const [isHoverd, setIsHoverd] = useState(false);
   const { pathname } = useLocation();
   const isHome = pathname === "/";
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-
   return (
-    <div className={`${styles.container} ${isHome && styles.home}`}>
+    <div
+      className={`${styles.container} ${isHome && styles.home}`}
+      // onMouseOver={() => setIsHoverd(true)}
+      // onMouseLeave={() => setIsHoverd(false)}
+    >
       <header className={styles.header}>
         {isSidebarOpen && <Sidebar close={() => setIsSidebarOpen(false)} />}
         {isSearchOpen && <SearchSidebar close={() => setIsSearchOpen(false)} />}
@@ -44,12 +52,18 @@ function Header() {
         </div>
         <img
           className={styles.logo}
-          src={logo}
+          src={logoLg}
           alt="the district barbers"
           onClick={() => navigate("/")}
         />
         <div className={`${styles.subMenu} ${styles.rightMenu}`}>
-          <CiUser className={styles.icon} />
+          <CiUser
+            className={styles.icon}
+            onClick={() => {
+              if (!currentUser) return navigate("/signin");
+              navigate("/account");
+            }}
+          />
           <BsBag className={styles.icon} />
         </div>
       </header>
@@ -58,4 +72,8 @@ function Header() {
   );
 }
 
-export default Header;
+const mapState = (state) => ({
+  currentUser: state.user.currentUser,
+});
+export default connect(mapState)(Header);
+// export default Header;

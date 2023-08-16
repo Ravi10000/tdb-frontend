@@ -1,0 +1,13 @@
+.button {
+  background: var(--darkColor);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  font-family: var(--normalFont);
+  letter-spacing: 1px;
+  cursor: pointer;
+  &.fit {
+    width: fit-content;
+  }
+}

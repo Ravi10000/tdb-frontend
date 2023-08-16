@@ -42,6 +42,15 @@
   --headingFont: "CaslonThin", "sans-serif";
   --normalFont: "BaronSans", "cursive";
   --maxWorkAreaWidth: 1700px;
+
+  /* --success-clr: #02a28e; */
+  --success-clr: var(--darkColor);
+  --success-bg-clr: #cbf3f0;
+  --info-clr: #877df2;
+  --info-bg-clr: #d2d0f7;
+  --warning-clr: #ed7000;
+  --error-clr: #ff5730;
+  --error-bg-clr: #fceade;
 }
 
 html {

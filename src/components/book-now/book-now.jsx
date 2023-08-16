@@ -17,6 +17,21 @@ function BookNow() {
       close();
     }, 290);
   }
+  function accessLocation() {
+    function success(location) {
+      console.log({ location });
+      alert(
+        "your location is: " +
+          location.coords.latitude +
+          ", " +
+          location.coords.longitude
+      );
+    }
+    function error(err) {
+      console.log({ err });
+    }
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -40,6 +55,7 @@ function BookNow() {
       {!selectedLocation ? (
         <LocationSelector
           closeBookNow={closeBookNow}
+          accessLocation={accessLocation}
           setSelectedLocation={setSelectedLocation}
         />
       ) : (

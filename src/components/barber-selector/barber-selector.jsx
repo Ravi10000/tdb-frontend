@@ -1,9 +1,11 @@
 import styles from "./barber-selector.module.scss";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosArrowBack } from "react-icons/io";
+import { MdOutlineCardGiftcard } from "react-icons/md";
 import { barberInfo } from "#data/barber-info";
 import BarberCard from "#components/barber-card/barber-card";
 import shuffleIcon from "#assets/icons/shuffle.png";
+import giftCardIcon from "#assets/icons/gift-card.png";
 
 function BarberSelector({ closeBookNow, setSelectedLocation }) {
   return (
@@ -29,6 +31,13 @@ function BarberSelector({ closeBookNow, setSelectedLocation }) {
         {barberInfo?.map((barber, index) => (
           <BarberCard barber={barber} key={index} />
         ))}
+        <BarberCard
+          any
+          barber={{
+            image: giftCardIcon,
+            name: "Buy a gift card instead",
+          }}
+        />
       </div>
     </div>
   );
