@@ -51,6 +51,8 @@
   --warning-clr: #ed7000;
   --error-clr: #ff5730;
   --error-bg-clr: #fceade;
+
+  --hover-clr: #f0f0f066;
 }
 
 html {

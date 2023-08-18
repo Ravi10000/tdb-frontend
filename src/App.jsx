@@ -12,6 +12,7 @@ import FlashGroup from "#components/flash-group/flash-group";
 
 import LoadingPage from "#pages/loading/loading";
 import ProductManagement from "#pages/product-management/product-management";
+import UserManagement from "#pages/user-management/user-management";
 
 const Header = lazy(() => import("#layouts/header/header"));
 const Footer = lazy(() => import("#layouts/footer/footer"));
@@ -29,7 +30,6 @@ const ProductPage = lazy(() => import("#pages/product/product"));
 const SigninPage = lazy(() => import("#pages/signin/signin"));
 const SignupPage = lazy(() => import("#pages/signup/signup"));
 const VerifyOTPPage = lazy(() => import("#pages/verify-otp/verify-otp"));
-const AdminPanel = lazy(() => import("#pages/admin-panel/admin-panel"));
 const ProfilePage = lazy(() => import("#pages/profile/profile"));
 
 function App({ flashList, setUser, startFetching, endFetching }) {
@@ -144,6 +144,14 @@ function App({ flashList, setUser, startFetching, endFetching }) {
               element={
                 <WithAdmin>
                   <ProductManagement />
+                </WithAdmin>
+              }
+            />
+            <Route
+              path="/admin/users"
+              element={
+                <WithAdmin>
+                  <UserManagement />
                 </WithAdmin>
               }
             />

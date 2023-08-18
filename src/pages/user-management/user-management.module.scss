@@ -1,0 +1,18 @@
+.userManagement {
+  width: 100%;
+  .usersContainer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow: scroll;
+  }
+}
+
+@media (min-width: 768px) {
+  .userManagement {
+    .usersContainer {
+      overflow: auto;
+    }
+  }
+}
