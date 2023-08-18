@@ -6,6 +6,9 @@
   .imageContainer {
     background: #f1f1f1;
     padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
       height: 250px;
       width: 250px;
@@ -32,5 +35,18 @@
     .finalPrice {
       color: rgb(217, 55, 55);
     }
+  }
+  .status {
+    .active {
+      color: green;
+    }
+    .inactive {
+      color: red;
+    }
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }

@@ -1,0 +1,108 @@
+.sidebarContainer {
+  .togglerContainer {
+    padding: 20px;
+    .showMenuIcon {
+      font-size: 25px;
+      cursor: pointer;
+    }
+  }
+  .adminSidebar {
+    background: #fff;
+    min-width: 250px;
+    width: fit-content;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 20px;
+    z-index: 1000;
+    animation: slideInFromLeft 0.5s ease-in-out forwards;
+    transition: all 0.5s ease-in-out;
+    &.closing {
+      left: -100%;
+    }
+    &.open {
+      left: 0;
+    }
+    .logo {
+      height: 4rem;
+      width: fit-content;
+    }
+    .optionsContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .option {
+        width: 100%;
+        cursor: pointer;
+        font-family: var(--headingFont);
+        font-weight: 500;
+        padding: 15px 20px;
+        border-radius: 2px;
+        &:hover {
+          background: rgba(240, 240, 240, 0.399);
+        }
+        &.active {
+          background: var(--backgroundColor);
+          &:hover {
+            filter: none;
+          }
+        }
+      }
+    }
+    .cross {
+      position: absolute;
+      cursor: pointer;
+      top: 20px;
+      right: -40px;
+      cursor: pointer;
+      font-size: 25px;
+      color: var(--textColor);
+      animation: scaleUp 0.5s ease-in-out;
+    }
+  }
+  .adminSidebar.sticky {
+    display: none;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebarContainer {
+    .togglerContainer {
+      display: none;
+    }
+    .adminSidebar.sticky {
+      display: block;
+      position: sticky;
+      animation: none;
+    }
+  }
+}

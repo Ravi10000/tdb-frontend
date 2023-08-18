@@ -1,0 +1,14 @@
+.profilePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+  }
+}

@@ -10,7 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 import { signinUser } from "#api/auth.req";
 import { pushFlash } from "#redux/flash/flash.actions";
 import { connect } from "react-redux";
-import { setUser } from "#redux/user/user.actions";
+import { endFetching, setUser, startFetching } from "#redux/user/user.actions";
 import { setAccessToken } from "#api/api";
 const signinSchema = z.object({
   email: z
@@ -21,7 +21,7 @@ const signinSchema = z.object({
     .email({ message: "Invalid email address" }),
   password: z.string().nonempty({ message: "Password is required" }),
 });
-function SigninPage({ pushFlash, setUser }) {
+function SigninPage({ pushFlash, setUser, startFetching, endFetching }) {
   const navigate = useNavigate();
   const {
     register,
@@ -43,7 +43,7 @@ function SigninPage({ pushFlash, setUser }) {
   function handleSignin(data) {
     console.log({ data });
     signinMutation.mutate(data, {
-      onSuccess: (res) => {
+      onSuccess: async (res) => {
         console.log({ res });
         if (res?.data?.message == "verification pending") {
           pushFlash({
@@ -56,9 +56,11 @@ function SigninPage({ pushFlash, setUser }) {
           type: "success",
           message: "Signin successfull",
         });
-        setUser(res.data.user);
+        await startFetching();
+        await setUser(res.data.user);
         setAccessToken(res?.data?.accessToken);
-        navigate("/account");
+        await endFetching();
+        navigate("/profile");
       },
     });
   }
@@ -111,4 +113,9 @@ function SigninPage({ pushFlash, setUser }) {
   );
 }
 
-export default connect(null, { pushFlash, setUser })(SigninPage);
+export default connect(null, {
+  pushFlash,
+  setUser,
+  startFetching,
+  endFetching,
+})(SigninPage);

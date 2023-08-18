@@ -4,5 +4,22 @@
   min-height: 100vh;
   .page {
     flex-grow: 1;
+    &.adminPanel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .App {
+    .page {
+      &.adminPanel {
+        flex-direction: row;
+        height: 100%;
+      }
+    }
   }
 }

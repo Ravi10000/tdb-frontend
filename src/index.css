@@ -43,7 +43,7 @@
   --normalFont: "BaronSans", "cursive";
   --maxWorkAreaWidth: 1700px;
 
-  /* --success-clr: #02a28e; */
+  --success-status-clr: #02a28e;
   --success-clr: var(--darkColor);
   --success-bg-clr: #cbf3f0;
   --info-clr: #877df2;

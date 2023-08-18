@@ -61,7 +61,7 @@ function Header({ currentUser }) {
             className={styles.icon}
             onClick={() => {
               if (!currentUser) return navigate("/signin");
-              navigate("/account");
+              navigate("/profile");
             }}
           />
           <BsBag className={styles.icon} />
@@ -76,4 +76,3 @@ const mapState = (state) => ({
   currentUser: state.user.currentUser,
 });
 export default connect(mapState)(Header);
-// export default Header;

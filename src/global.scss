@@ -17,3 +17,33 @@
     }
   }
 }
+
+._admin_head {
+  position: sticky;
+  top: 0;
+  background: var(--backgroundColor);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+._pagination {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ._navigation {
+    display: flex;
+    gap: 20px;
+    ._nav_icon {
+      font-size: 25px;
+    }
+  }
+}
+
+.__buttonIcon {
+  height: 1rem;
+  width: fit-content;
+}

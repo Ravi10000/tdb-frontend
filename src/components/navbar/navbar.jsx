@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./navbar.module.scss";
+import { useNavigate } from "react-router-dom";
 import { navbarItems } from "src/data/navbar-items";
 import { HashLink } from "react-router-hash-link";
 import { useBookNow } from "src/context/book-now.context";

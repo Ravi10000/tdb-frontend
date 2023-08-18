@@ -10,10 +10,10 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
 import { pushFlash } from "#redux/flash/flash.actions";
 import { connect } from "react-redux";
-import { setUser } from "#redux/user/user.actions";
+import { endFetching, setUser, startFetching } from "#redux/user/user.actions";
 import { setAccessToken } from "#api/api";
 
-function VerifyOTPPage({ pushFlash, setUser }) {
+function VerifyOTPPage({ pushFlash, setUser, startFetching, endFetching }) {
   const navigate = useNavigate();
   const { state } = useLocation();
   const otpSchema = z.object({
@@ -49,13 +49,15 @@ function VerifyOTPPage({ pushFlash, setUser }) {
     verifyMutation.mutate(
       { ...data, email: state?.email },
       {
-        onSuccess: (res) => {
+        onSuccess: async (res) => {
           console.log({ res });
           pushFlash({ message: "Verification successfull", type: "success" });
-          setUser(res.data.user);
+          await startFetching();
+          await setUser(res.data.user);
           setAccessToken(res.data.accessToken);
+          await endFetching();
           reset();
-          navigate("/account");
+          navigate("/profile");
         },
       }
     );
@@ -88,4 +90,9 @@ function VerifyOTPPage({ pushFlash, setUser }) {
   );
 }
 
-export default connect(null, { pushFlash, setUser })(VerifyOTPPage);
+export default connect(null, {
+  pushFlash,
+  setUser,
+  startFetching,
+  endFetching,
+})(VerifyOTPPage);

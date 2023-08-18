@@ -6,8 +6,17 @@
   width: 100%;
   font-family: var(--normalFont);
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   cursor: pointer;
   &.fit {
     width: fit-content;
+  }
+  &.outlined {
+    background: transparent;
+    border: 1px solid var(--darkColor);
+    color: var(--darkColor);
   }
 }
