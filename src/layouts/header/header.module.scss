@@ -1,13 +1,20 @@
 .container {
-  position: sticky;
-  top: 0;
-  left: 0;
+  position: relative;
+  // top: 0;
+  // left: 0;
+  z-index: 99999;
+  &.home {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0.75rem 1rem;
     background: var(--backgroundColor);
+
     .logo {
       height: 4rem;
       width: fit-content;
@@ -28,7 +35,6 @@
 
 @media (min-width: 1024px) {
   .container {
-    position: relative;
     &.home {
       color: #fff;
       .header {
@@ -70,10 +76,6 @@
     }
     .header {
       padding: 1rem 2rem;
-      // background: transparent;
-      // .logo {
-      //   filter: invert(1);
-      // }
     }
   }
 }

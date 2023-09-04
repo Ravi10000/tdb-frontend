@@ -41,6 +41,8 @@ function App({ flashList, setUser, startFetching, endFetching }) {
   const openSidebar = () => setIsSidebarVisible(true);
 
   const isAdmin = pathname.includes("admin");
+  const isHome = pathname === "/";
+
   const fetchProfileQuery = useQuery(
     ["profile"],
     async () => {
