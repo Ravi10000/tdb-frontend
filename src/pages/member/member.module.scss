@@ -1,0 +1,59 @@
+.memberPage {
+  .heroSection {
+    height: 500px;
+    width: 100%;
+    background: linear-gradient(to bottom, #2f303185, #2f303185),
+      url("/employee.jpg");
+    background-size: cover;
+    background-position: 50% 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      font-size: 4rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+  .about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    p {
+      font-weight: 300;
+    }
+    .workImages {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      img {
+        width: 200px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    }
+  }
+  .buttonContainer {
+    button {
+      background: transparent;
+      border: 2px solid #000;
+      border-radius: 50px;
+      padding: 20px 30px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .memberPage {
+    .about {
+      .workImages {
+        margin-top: 30px;
+        justify-content: center;
+        flex-direction: row;
+      }
+    }
+  }
+}

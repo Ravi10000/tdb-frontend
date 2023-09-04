@@ -1,4 +1,7 @@
 .container {
+  position: sticky;
+  top: 0;
+  left: 0;
   .header {
     display: flex;
     align-items: center;

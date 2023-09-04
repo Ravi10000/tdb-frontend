@@ -113,7 +113,7 @@ function ProductPopup({ close, pushFlash, selectedProduct }) {
   return (
     <form onSubmit={handleSubmit(handleProductSubmission)}>
       <WithPopup
-        title="Add Product"
+        title={selectedProduct ? "Edit Product" : "Add Product"}
         close={close}
         isSubmitting={isLoading || isUpdating}
       >

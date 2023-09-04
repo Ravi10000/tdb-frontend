@@ -3,11 +3,12 @@ import { fetchUsers } from "#api/users.req";
 import { useEffect, useState } from "react";
 import CustomButton from "#components/custom-button/custom-button";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import UsersPopup from "#components/users-popup/users-popup";
 
 function UserManagement() {
   const [users, setUsers] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedUser, setSelectedUser] = useState(null);
+  // const [selectedUser, setSelectedUser] = useState(null);
   console.log({ users });
   const limit = 10;
   const [skip, setSkip] = useState(0);
@@ -51,6 +52,7 @@ function UserManagement() {
   }, []);
   return (
     <div className={styles.userManagement}>
+      {showPopup && <UsersPopup close={() => setShowPopup(false)} />}
       <div className="_admin_head">
         <h1>Manage Users</h1>
         <CustomButton
@@ -96,12 +98,13 @@ function UserManagement() {
         </div>
         <div className="_navigation">
           <BiLeftArrowAlt
-            className="_nav_icon"
+            className={`_nav_icon ${skip <= 0 ? "_inactive" : ""}`}
             onClick={handleFetchPrevUsers}
-            disabled={skip <= 0}
           />
           <BiRightArrowAlt
-            className="_nav_icon"
+            className={`_nav_icon ${
+              totalUsers <= skip + limit ? "_inactive" : ""
+            }`}
             onClick={handleFetchMoreUsers}
           />
         </div>

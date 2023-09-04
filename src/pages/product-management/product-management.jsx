@@ -20,7 +20,7 @@ function ProductManagement({ pushFlash }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [productForDeletion, setProductForDeletion] = useState(null);
 
-  const limit = 10;
+  const limit = 12;
   const [skip, setSkip] = useState(0);
   const [totalProducts, setTotalProducts] = useState(0);
   async function handleFetchProducts() {
@@ -138,12 +138,14 @@ function ProductManagement({ pushFlash }) {
         </div>
         <div className="_navigation">
           <BiLeftArrowAlt
-            className="_nav_icon"
+            className={`_nav_icon ${skip <= 0 ? "_inactive" : ""}`}
             onClick={handleFetchPrevProducts}
             disabled={skip <= 0}
           />
           <BiRightArrowAlt
-            className="_nav_icon"
+            className={`_nav_icon ${
+              totalProducts <= skip + limit ? "_inactive" : ""
+            }`}
             onClick={handleFetchMoreProducts}
           />
         </div>

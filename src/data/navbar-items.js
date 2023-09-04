@@ -4,8 +4,8 @@ export const navbarItems = [
     // path: "/contact-us",
   },
   {
-    name: "JOIN OUR TEAM",
-    path: "/contact-us",
+    name: "OUR TEAM",
+    path: "/our-team",
   },
   {
     name: "LOCATIONS",

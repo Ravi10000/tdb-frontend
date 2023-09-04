@@ -34,12 +34,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   ._navigation {
     display: flex;
     gap: 20px;
     ._nav_icon {
       cursor: pointer;
       font-size: 25px;
+      &._inactive {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
     }
   }
 }

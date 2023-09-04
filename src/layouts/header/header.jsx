@@ -30,11 +30,7 @@ function Header({ currentUser }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <div
-      className={`${styles.container} ${isHome && styles.home}`}
-      // onMouseOver={() => setIsHoverd(true)}
-      // onMouseLeave={() => setIsHoverd(false)}
-    >
+    <div className={`${styles.container} ${isHome && styles.home}`}>
       <header className={styles.header}>
         {isSidebarOpen && <Sidebar close={() => setIsSidebarOpen(false)} />}
         {isSearchOpen && <SearchSidebar close={() => setIsSearchOpen(false)} />}

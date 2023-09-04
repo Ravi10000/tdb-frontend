@@ -4,6 +4,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 30px;
   }
 }
@@ -13,6 +14,7 @@
     .productsContainer {
       max-width: 1000px;
       display: grid;
+      place-items: center;
       grid-template-columns: repeat(2, 1fr);
     }
   }

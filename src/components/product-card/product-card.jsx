@@ -5,7 +5,10 @@ import { useNavigate } from "react-router-dom";
 function ProductCard({ product, editable, editProduct, deleteProduct }) {
   const navigate = useNavigate();
   return (
-    <div className={styles.productCard} onClick={() => navigate("/shop/0")}>
+    <div
+      className={styles.productCard}
+      onClick={() => navigate(`/shop/${product._id}`, { state: { product } })}
+    >
       <div className={styles.imageContainer}>
         <img
           src={`${import.meta.env.VITE_BASE_SERVER_URL}/images/${

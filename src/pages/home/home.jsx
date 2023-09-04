@@ -1,5 +1,5 @@
 import styles from "./home.module.scss";
-import heroVideo from "#assets/videos/home-hero-video.mp4";
+// import heroVideo from "#assets/videos/home-hero-video.mp4";
 import VideoPlayer from "#components/video-player/video-player";
 import HomePageProducts from "#components/home-page-products/home-page-products";
 import logo from "#assets/images/logos/tdb-logo.png";
@@ -15,7 +15,7 @@ function HomePage() {
     <div className={styles.homePage}>
       <section className={styles.heroSection}>
         <div className={styles.heroVideo}>
-          <VideoPlayer src={heroVideo} />
+          <VideoPlayer src={promoVideo} />
         </div>
       </section>
       <h1
@@ -25,14 +25,14 @@ function HomePage() {
         BOOK AN APPOINTMENT
       </h1>
       <h2 className={styles.subtitle}>#goodvibes</h2>
-      <HomePageProducts />
+      <HomePageProducts video={promoVideo} />
       <div className={styles.shopAt}>
         <div className={styles.shopHead}>
           <h2>SHOP at</h2>
           <img src={logo} alt="the district barbers" />
         </div>
         <div className={styles.shopItemContainer}>
-          <VideoPlayer src={heroVideo}>
+          <VideoPlayer src={promoVideo}>
             <div className={styles.content}>
               <img src={logoLarge} alt="the district barbers" />
               <p>SELECTIVE WINES</p>

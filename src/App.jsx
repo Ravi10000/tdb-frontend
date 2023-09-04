@@ -31,6 +31,8 @@ const SigninPage = lazy(() => import("#pages/signin/signin"));
 const SignupPage = lazy(() => import("#pages/signup/signup"));
 const VerifyOTPPage = lazy(() => import("#pages/verify-otp/verify-otp"));
 const ProfilePage = lazy(() => import("#pages/profile/profile"));
+const OurTeamPage = lazy(() => import("#pages/our-team/our-team"));
+const MemberPage = lazy(() => import("#pages/member/member"));
 
 function App({ flashList, setUser, startFetching, endFetching }) {
   const { pathname } = useLocation();
@@ -130,6 +132,8 @@ function App({ flashList, setUser, startFetching, endFetching }) {
                 </WithUser>
               }
             />
+            <Route path="/our-team" element={<OurTeamPage />} />
+            <Route path="/members/:name" element={<MemberPage />} />
 
             {/* <Route
               path="/admin/:panel"

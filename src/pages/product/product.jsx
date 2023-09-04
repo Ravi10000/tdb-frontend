@@ -1,14 +1,26 @@
 import styles from "./product.module.scss";
-import { useParams } from "react-router-dom";
-import { productInfo } from "#data/product-info";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function ProductPage() {
-  const { id } = useParams();
-  const product = productInfo?.[typeof id === "number" ? id : 0];
+  const navigate = useNavigate();
+  const { state } = useLocation();
+  const product = state?.product;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if (!product) {
+      navigate("/shop");
+    }
+  }, [state]);
   return (
     <div className={styles.productPage}>
       <div className={styles.imageContainer}>
-        <img src={product?.image} alt={product?.name} />
+        <img
+          src={`${import.meta.env.VITE_BASE_SERVER_URL}/images/${
+            product.image
+          }`}
+          alt={product?.name}
+        />
       </div>
       <div className={styles.info}>
         <h1>{product?.name}</h1>
